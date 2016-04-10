@@ -1,0 +1,17 @@
+Rob Navarro
+Assignment 7 Questions
+
+1. How is the graph stored in the provided code -- adjacency matrix or edge list?
+- Edge List
+2. Which of the graphs are connected? How can you tell?
+- All graphs but number 3 are connected. You can tell this since all of the vertices are reachable in graphs 1, 2, 4, and 5. Graph 3 is the only graph that has unreachable vertices, which means it is not connected.
+3. Imagine that we ran each search in the other direction (from destination to source, instead of source to destination) -- would the output change at all? What if the graphs were directed graphs?
+- If the graph is not directed then the results would be the same. However, if the graph directed we would likely see different results.
+4. What are a few pros and cons of DFS vs. BFS?
+- DFS can potentially take the wrong route and have to back track a long way several times.
+- The opposite of the above can happen as well though, DFS could find the route very quickly if the best path is taken first.
+- DFS could potentially get stuck in an infinite loop if it goes down an infinite path.
+- BFS will always find the path since it is searching several paths at the same time. This prevents it from getting stuck in an infinite loop.
+- BFS is not as quick as DFS since it is checking several paths at the same time.
+5. What's the Big O execution time to determine if a node is reachable from another node?
+- O(n)

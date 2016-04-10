@@ -1,0 +1,17 @@
+Rob Navarro
+A6 Answers
+
+1. Give an example of two words that would hash to the same value using stringHash1() but would not using stringHash2().
+- The values included in input3.txt are a good example. They hash to the same value when using stringHash1(), and they are all hashed to different values when using stringHash2().
+2. Why does the above make stringHash2() superior to stringHash1()?
+- stringHash2 has a much more complex way of determining a key. stringHash1() simply sums the value for all of the characters, which can lead to collisions with words that are the same length and contain the same amount of letters. stringHash2() has an offset for each letter based on its location in the string. This helps reduce the number of collisions in the hash table.
+3. When you run your program on the same input file but one run using stringHash1() and on the other run using stringHash2(). Is it possible for your size() function to return different values?
+- No, if the set of words being passed to the hash functions are the same we will not see a change in the size of the hash table. This is due to the fact that size() returns the number of hashlinks in the table.
+4. When you run your program on the same input file using stringHash1() on one run and using stringHash2() on another, is it possible for your tableLoad() function to return different values?
+- No, similar to the answer above this answer is related to the number of hashlinks and number of buckets. Since these should not be changing we can expect to see the same tableLoad when chaning between the hash functions.
+5. When you run your program on the same input file with one run using stringHash1() and the other run using stringHash2(), is it possible for your emptyBuckets() function to return different values?
+- Yes, the hash functions produce different keys so it is completely possibly to have a different amount of empty buckets with different hash functions.
+6. Is there any difference in the number of 'empty buckets' when you change the table size from an even number, like 1000 to a prime like 997 ?
+- Yes, there are less empty buckets when changing the number to a lesser prime number.
+7. Using the timing code provided to you. Run you code on different size hash tables. How does affecting the hash table size change your performance?
+- As the table size grows larger it takes longer for the program to finish. On the flip server things still ran rather quickly and it wasn't until I made the table size 1000000 that I started to see some changes. With a size of 1000000 it took about 0.01 seconds and when increasing the table size to 5000000 the time increased to .05. I think it is fair to say that with largers tables the time may be a bit slower, but not by much
